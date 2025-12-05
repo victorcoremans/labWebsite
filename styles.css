@@ -6,3 +6,10 @@
         --brown: #B6A188;
 
 }
+p {
+    font-family: "Agrandir";
+}
+
+@media (min-width: 900px) {
+
+}
