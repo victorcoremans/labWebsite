@@ -1,15 +1,98 @@
 :root {
-    --blue: #7FA8A0;
-        --red: #C97E63;
-        --green: #8E8C6F;
-        --white: #F3E8D2;
-        --brown: #B6A188;
+  --blue: #7fa8a0;
+  --red: #c97e63;
+  --green: #8e8c6f;
+  --white: #f3e8d2;
+  --brown: #b6a188;
+}
+body {
+  margin: 0px;
+}
+
+p {
+  font-family: "Agrandir";
+}
+.hamburger {
+  display: flex;
+  gap: 2px;
+  flex-direction: column;
+}
+.hamburger span {
+  display: block;
+  background-color: black;
+  height: 1px;
+  width: 15px;
+}
+.hammock {
+  width: 100%;
+  height: auto;
+}
+.h1-tekst {
+  padding: 10px;
+}
+.hero {
+  min-height: 100svh;
+  background-color: var(--green);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden; /* voorkom dat content groter wordt dan het scherm */
+  border-bottom-left-radius: 30px;
+}
+.hero h1,
+.hero p {
+  margin: 0;
+}
+.hero h1 {
+  font-size: clamp(1.4rem, 7vw, 2.2rem);
+  line-height: 1.1;
+}
+hr {
+  border: 2.5px solid var(--white);
+  border-radius: 5px;
+  width: 75%;
+  margin-top: -40px;
+}
+.vertrouwen h1 {
+  color: var(--white);
+    font-size: clamp(0.9rem, 7vw, 1.2rem);
+  line-height: 1.1;
+  padding: 30px;
+  margin-top: -5px;
 
 }
-p {
-    font-family: "Agrandir";
+.vertrouwen {
+  
+
+}
+/*
+.hammock {
+    width: 100%;
+    height: auto;
+}
+.hero {
+    background-color: var(--green);
+}
+/* @media (min-width: 600px) {
+  .hammock {
+    width: 70%;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 10px;
+  }
 }
 
 @media (min-width: 900px) {
-
+  .hammock {
+    width: 50%;
+  }
 }
+
+@media (min-width: 1200px) {
+  .hammock {
+    width: 25%;
+  }
+} */
