@@ -16,10 +16,44 @@ h1 {
 p {
   font-family: "Agrandir";
 }
+nav {
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.hamburger,
+.nav-logo {
+  width: 25%;
+  /* height: 40px; Zelfde hoogte */
+}
+.navbar a {
+  display: none;
+  color: var(--green);
+  text-decoration: none;
+}
+.nav-button {
+    text-decoration: none;
+  text-align: center;
+  background-color: var(--green);
+  color: var(--white);
+  border-radius: 25px;
+  width: 100px;
+  height: 25px;
+}
+.nav-logo,
 .hamburger {
+  display: block; /* of flex voor hamburger */
+}
+.hamburger {
+  /* margin-left: -30px; */
+  margin-right: -30px;
   display: flex;
   gap: 2px;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .hamburger span {
   display: block;
@@ -27,25 +61,40 @@ p {
   height: 1px;
   width: 15px;
 }
+
 .hammock {
   width: 100%;
   height: auto;
 }
 .h1-tekst {
+  color: var(--white);
   padding: 10px;
 }
-.hero {
-  min-height: 100svh;
-  background-color: var(--green);
+.hero-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  margin-top: -50px;
+}
+.hero-content > a {
+  align-self: center; /* Centreert button */
+  margin: 20px 0;
+}
+.hero {
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* margin-top: 50px; */
+  background-color: var(--green);
+
   overflow: hidden; /* voorkom dat content groter wordt dan het scherm */
   border-bottom-left-radius: 30px;
-  padding: 10px;
+  /* padding: 10px; */
 }
 .hero a {
+  align-self: center;
   text-decoration: none;
   text-align: center;
   background-color: var(--white);
@@ -56,7 +105,7 @@ p {
 }
 .hero h1,
 .hero p {
-  margin: 0;
+  margin: 15px;
 }
 .hero h1 {
   font-size: clamp(1.3rem, 7vw, 2.1rem);
@@ -71,7 +120,7 @@ p {
 .vertrouwen h1 {
   text-align: center;
   color: var(--green);
-  font-size: clamp(0.25rem, 7vw, 0.75rem);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
   line-height: 1.1;
   padding: 30px;
   margin-top: -5px;
@@ -104,9 +153,13 @@ p {
 
 /* Afbeeldingen schalen perfect binnen hun gridvak */
 .vertrouwen-img img {
+      margin: 10px;
+display: flex;
+align-items: center;
   width: 100%;
   height: auto;
   object-fit: cover;
+
 }
 
 /* Jouw schaalverhoudingen, maar dan fluid */
@@ -114,26 +167,29 @@ p {
   grid-column: 1;
   grid-row: 1;
   transform: scale(1.5);
-  max-width: 100%;
+  max-width: 85%;
+  margin-left: 50px;
+  margin-top: 44px;
 }
 
 #bed {
   grid-column: 2;
   grid-row: 1;
   scale: 0.65;
+  margin-bottom: 20px;
   max-width: 100%; /* idem */
 }
 
 #books {
-  margin-top: -65px;
+  margin-top: -150px;
   grid-column: 1 / span 2; /* neemt beide kolommen */
   grid-row: 2;
   justify-self: center;
   scale: 0.65;
   max-width: 100%; /* idem */
 }
-.vertrouwen table p {
-  font-size: 10px;
+.vertrouwen  p {
+   font-size: clamp(0.9rem, 3vw, 1.1rem);
 }
 .vertrouwen table {
   margin-top: -50px; /* Trek de tabel naar boven */
@@ -159,6 +215,7 @@ p {
   flex-direction: column;
 }
 .aanpak h1 {
+  text-align: center;
   color: var(--white);
   font-size: clamp(0.40rem, 7vw, 0.90rem);
   line-height: 1.1;
@@ -172,6 +229,7 @@ p {
   margin-top: -40px;
 }
 .aanpak p {
+  text-align: center;
   margin: 10px;
   text-align: center;
   color: var(--white);
@@ -179,8 +237,10 @@ p {
   line-height: 1.1;
 }
 .stats-bar {
+    width: 85%;
+
   margin: 10px;
-  padding: 10px;
+  /* padding: 10px; */
   height: 53px;
   background: #f3e8d2;
   border-radius: 10px;
@@ -213,16 +273,18 @@ p {
 .vlak {
   position: relative;
   background-color: #d9d9d9;
-  width: 225px;
-  height: 125px;
+  width: 85%;
+  height: 250px;
   border-radius: 10px;
 }
 .vlak img {
   position: absolute;
   right: 0;
-  top: 0;
+  bottom: 0;
   width: auto; /* pas aan naar wens */
   height: auto;
+  display: flex;
+  justify-self: end;
 }
 .pijlers {
   display: flex;
@@ -242,18 +304,26 @@ p {
   width: 95%;
   margin-top: -10px;
 }
-.pijlers p {
+.waarden-pijlers {
+    display: grid;
+  grid-template-columns: 1fr 1fr; /* links | rechts */
+  column-gap: 24px;
+  row-gap: 8px;
+}
+.pijlers span {
   color: var(--green);
+
 }
 .artikels {
   background-color: var(--green);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-  
+ 
+  padding: 10px;
 }
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+gap: 10px;}
 .artikels h1 {
   font-size: clamp(0.5rem, 7vw, 1.0rem);
   margin: 10px;
@@ -263,8 +333,8 @@ p {
 .vlak-card {
   position: relative;
   background-color: #d9d9d9;
-  width: 255px;
-  height: 125px;
+  width: 100%;
+  height: 250px;
   border-radius: 10px;
 }
 .card h1 {
@@ -280,11 +350,12 @@ p {
   font-weight: bold;
 }
 .card {
+  height: 500px;
   text-align: start;
   border-radius: 25px;
   background-color: var(--white);
-  width: 90%;
-  margin: 10px;
+  width: 70%;
+  /* margin: 10px; */
 }
 .faq {
   display: flex;
@@ -295,8 +366,8 @@ margin: 25px;}
 .vlak-faq {
     position: relative;
   background-color: #d9d9d9;
-  width: 250px;
-  height: 275px;
+  width: 90%;
+  height: 400px;
   border-radius: 10px;
 }
 .faq h1 {
@@ -332,8 +403,9 @@ margin: 25px;}
   height: 1%;
   justify-content: center;
   align-items: center;
+  
   position: absolute;
-  bottom: 475px; /* Hoger = groter getal */
+  bottom: 425px; /* Hoger = groter getal */
   left: 50%;
   transform: translateX(-50%); /* Centreert horizontaal */
   width: 75%;
@@ -399,53 +471,253 @@ margin: 25px;}
 
 .footer-row .bold {
   margin: 0;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .footer-row img {
   width: 20px;
   height: 20px;
 }
-
+.footer-row p:not(.bold) {
+  visibility: hidden;
+}
 .social-icons {
   display: flex;
-  gap: 15px;
-  margin-top: 10px;
+
 }
 
 .social-icons img {
   width: 30px;
   height: 30px;
 }
-
-/*
+.popup {
+  color: var(--green);
+}
+@media (min-width: 768px) {
+  .navbar a {
+    display: block !important;
+  }
+  
+  .hamburger {
+    display: none;
+  }
+  
+  .hero {
+    justify-content: center;
+    align-items: center;
+    min-height: 75%;
+    padding: 0; /* Verwijder padding zodat hammock kan vullen */
+  }
+  .hero h1 {
+  font-size: clamp(1.5rem, 5vw, 1.5rem);
+}
+  .hero-content {
+    margin:  1px;
+    flex-direction: row;
+    height: 100%; /* Neemt volledige hoogte van hero */
+  }
+  
 .hammock {
-    width: 100%;
-    height: auto;
+  width: 75%;
+  height: 100%;
+  object-fit: contain; /* Hele afbeelding zichtbaar, mogelijk whitespace */
+  order: 2;
 }
-.hero {
-    background-color: var(--green);
+.tekst-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-/* @media (min-width: 600px) {
-  .hammock {
-    width: 70%;
-  }
-  h1 {
-    font-size: 20px;
-  }
-  p {
-    font-size: 10px;
-  }
-}
-
-@media (min-width: 900px) {
-  .hammock {
+  .h1-tekst {
     width: 50%;
   }
-}
+  #open {
 
-@media (min-width: 1200px) {
-  .hammock {
-    width: 25%;
+}
+.vertrouwen h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+.vertrouwen p {
+  font-size: clamp(0.5rem, 5vw, 1.4rem);
+}
+#bed {
+ margin-left: 25px;
+ margin-bottom: -60px; 
+
+}
+.aanpak h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+
+}
+.aanpak p {
+  font-size: clamp(0.5rem, 5vw, 1.2rem);
+
+}
+.pijlers {
+  margin: 50px;
+}
+.waarden-pijlers {
+ display: flex;
+     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 60px;}
+    .vlak {
+      max-height:2000px;
+    }
+.vertrouwen-img {
+  max-width: 80%;
+place-items: center;
+}
+#books {
+  
+  margin-top:-30px;
+  
+  justify-self: center;
+
+}
+.popup h2 {
+  font-size: larger;
+}
+.popup p {
+  font-size: medium;
+}
+.vlak {
+height: 450px;
+margin: 40px;
+}
+.stats-bar {
+width: 100%;
+}
+.vertrouwen-2 {
+  display: flex;
+  flex-direction: row;
+}
+.vertrouwen-2 table {
+ scale: 0.75;
+}
+.card {
+  width: 200px;
+}
+.cards {
+flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+.faq-tekst {
+  display: flex;
+  flex-direction: column;
+}
+.card h1 {
+  font-size: clamp(0.5rem, 5vw, 1.2rem);
+}
+.card  {
+  font-size: clamp(0.05rem, 5vw, 0.75rem);
+}
+.paragraaf-faq {
+  margin: 10px;
+}
+.vlak-faq {
+  width: 1500px;
+  height: 275px;
+}
+.faq {
+  margin: 150px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.popup {
+  margin-bottom: -125px;
+  flex-direction: row;
+}
+  .footer-row p:not(.bold) {
+    visibility: visible;
   }
+  .footer-row {
+    flex-direction: column;
+      border-bottom: 1px solid var(--green); /* Optioneel */
+
+  }
+    .footer-row img:not(.social-icons) {
+    visibility: hidden;
+  }
+.footer {
+  height: 250px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+.logoimg {
+  height: 50px;
+}
+.social-icons {
+ flex-direction: row;
+ justify-content: space-between;
+}
+.popup {
+  height: 100px;
+
+}
+.content-popup {
+  display: flex;
+  flex-direction: row;
+gap: 300px;}
+/* .tekst-popup {
+  display: flex;
+  flex-direction: row;
 } */
+}
+@media ( min-width: 1024px) {
+  /* --- GLOBALE MAX BREEDTE --- */
+
+ .card h1 {
+  font-size: clamp(0.5rem, 5vw, 1.2rem);
+}
+.card  {
+  font-size: clamp(0.05rem, 5vw, 0.75rem);
+}
+  .vertrouwen{
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .card {
+    width: 400px;
+  }
+  .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+.hero-content {
+  align-items: center;
+  justify-content: space-between;
+}
+  /* --- HERO SECTIE --- */
+  .h1-tekst {
+    width: 45%;
+    padding: 50px;
+  }
+
+.vertrouwen h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+.vertrouwen p {
+  font-size: clamp(0.5rem, 5vw, 1.4rem);
+}
+ .aanpak h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+
+}
+.aanpak p {
+  font-size: clamp(0.5rem, 5vw, 1.2rem);
+}
+  .vlak-faq {
+    width: 50%;
+        width: 50%;
+
+  }
+  .logo {
+    flex-basis: 35%; 
+  }
+}
