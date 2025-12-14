@@ -29,14 +29,18 @@ nav {
 }
 .navbar a {
   display: none;
-  color: var(--green);
   text-decoration: none;
+  color: var(--green);
+}
+.navbar a:nth-child(8) {
+    color: var(--white);
+
 }
 .nav-button {
-    text-decoration: none;
+
   text-align: center;
   background-color: var(--green);
-  color: var(--white);
+  /* color: var(--white); */
   border-radius: 25px;
   width: 100px;
   height: 25px;
@@ -90,6 +94,7 @@ nav {
   overflow: hidden; 
   border-bottom-left-radius: 30px;
 }
+µ
 .hero a {
   text-decoration: none;
   text-align: center;
